@@ -8,7 +8,6 @@ const Card = ({ card, feedback, onClick }) => (
         <span className="symbol">
             { feedback === 'hidden' ? HIDDEN_SYMBOL : card }
         </span>
-
     </div>
 )
 
