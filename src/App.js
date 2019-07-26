@@ -11,15 +11,17 @@ const SYMBOLS = '😀🎉💖🎩🐶🐱🦄🐬🌍🌛🌞💫🍎🍌🍓�
 const VISUAL_PAUSE_MSECS = 750
 
 class App extends Component {
-  state = {
-    cards: this.generateCards(),
-    currentPair: [],
-    guesses: 0,
-    hallOfFame: null,
-    matchedCardIndices: [],
+  constructor(props){
+    super(props)
+    this.state = {
+      cards: this.generateCards(),
+      currentPair: [],
+      guesses: 0,
+      hallOfFame: null,
+      matchedCardIndices: [],
+    }
   }
-
-  // Arrow fx for binding
+  
   displayHallOfFame = hallOfFame => {
     this.setState({ hallOfFame })
   }
@@ -50,7 +52,6 @@ class App extends Component {
     return indexMatched ? 'visible' : 'hidden'
   }
 
-  // Arrow fx for binding
   handleCardClick = index => {
     const { currentPair } = this.state
 
@@ -81,6 +82,7 @@ class App extends Component {
 
   render() {
     const { cards, guesses, hallOfFame, matchedCardIndices } = this.state
+    
     const won = matchedCardIndices.length === cards.length
     return (
       <div className="memory">

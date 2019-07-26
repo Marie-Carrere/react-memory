@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import './HighScoreInput.css'
 import { saveHOFEntry } from './HallOfFame'
+import './HighScoreInput.css'
 
 class HighScoreInput extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class HighScoreInput extends Component {
       <form className="highScoreInput" onSubmit={this.persistWinner}>
         <p>
           <label>
-            Bravo ! Entre ton prénom :
+            Congratulations ! Please enter your name :
             <input
               type="text"
               autoComplete="given-name"
@@ -28,7 +28,7 @@ class HighScoreInput extends Component {
               value={this.state.winner}
             />
           </label>
-          <button type="submit">J’ai gagné !</button>
+          <button type="submit">You won !</button>
         </p>
       </form>
     )
@@ -37,7 +37,7 @@ class HighScoreInput extends Component {
 
 HighScoreInput.propTypes = {
   guesses: PropTypes.number.isRequired,
-  onStored: PropTypes.func.isRequired,
+  onStored: PropTypes.func.isRequired
 }
 
 export default HighScoreInput
